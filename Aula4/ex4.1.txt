@@ -1,0 +1,22 @@
+Isabel Rosalino Gomes
+
+Classe: Vehicle
+Atributos: brand, license_plate
+Métodos: break
+
+Classe: Client
+Atributos: name, age, address
+Métodos: order, cancel_request
+
+Classe: Product
+Atributos: price, material, weight
+Métodos: break
+
+Classe: Driver
+Atributos: name, age, salary
+Métodos: drive, sleep
+
+Classe: Freight
+Atributos: distance, country, gas_price
+Métodos: increase, decrease
+
