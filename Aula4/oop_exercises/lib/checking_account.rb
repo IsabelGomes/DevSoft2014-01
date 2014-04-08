@@ -8,8 +8,10 @@ class CheckingAccount < BankAccount
   end
 
   def withdraw(amount)
-    @balance -= amount
-    log_transaction('Withdrawal', amount)
+    if @balance >= -500+amount
+        @balance -= amount
+        log_transaction('Withdrawal', amount)
+    end
   end
 
   def transfer(account, amount)

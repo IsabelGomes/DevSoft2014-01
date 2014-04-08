@@ -4,18 +4,10 @@ class SalaryAccount < CheckingAccount
 
 	def initialize
 		super
-		@montly_fee = MONTLY_FEE/2
+		@monthly_fee = MONTHLY_FEE/2
 	end
-
-  def deposit(amount)
-    @balance += amount
-    log_transaction('Deposit', amount)
-  end
-
-  def withdraw(amount)
-    @balance -= amount
-    log_transaction('Withdrawal', amount)
-  end
-
+	
+	def transfer(account, amount)
+	end
 
 end
