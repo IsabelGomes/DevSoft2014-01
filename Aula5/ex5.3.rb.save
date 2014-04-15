@@ -58,28 +58,15 @@ sum = 0
 
 # 2) Quantas são mulheres?
 
-puts "Mulheres: #{people.length-sum}"
+puts "Mulheres: {people.length
 
 # 3) Quantas pessoas são maiores de idade?
 
-sum=0
-people.each do |x|
-	if(x[:age] <= 18)
-		sum += 1
-	end
-end
- puts "Maiores de idade: #{sum}"
+# Seu código aqui...
 
 # 4) Qual a soma das idades de todos os brasileiros?
 
-sum=0
-people.each do |x|
-	if(x[:country] == 'Brazil')
-		sum = sum + x[:age]
-	end
-end
-
-puts "Somatoria das idades: #{sum}" 
+# Seu código aqui...
 
 # 5) Imprima todos os nomes em ordem alfabética
 
