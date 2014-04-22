@@ -87,22 +87,19 @@ str = <<-STR
 19:26 - [esporte] Liga nacional de basquete tem recorde de público
 STR
 
-puts " "
-
 # 1) Capturar o horário, tema, e título de cada notícia. Em seguida, para cada
 # notícia, imprimi-la com o seguinte formato: "TEMA: TÍTULO (HORA)"
 
 horario = str.scan(/^\d\d:\d\d/)
 tema = str.scan(/\[.+\]/)
-titulo = str.scan(/[A-Z].+/)
+titulo = str.scan(/\[.+\](.+)/)
 
 8.times do |i|
   tema[i] = tema[i].match(/[^\[\]]+/)
-  #titulo[i] = titulo[i].match(/\w+/)
+#  titulo[i] = titulo[i].scan(/[^\[\]]+/)
   puts "#{tema[i]}: #{titulo[i]} (#{horario[i]})"
 end
 
-puts " "
 # 2) Quantas linhas existem nesta string
 
 sum = 0
@@ -114,14 +111,21 @@ puts "Existem #{sum} linhas."
 
 # 3) Quantas notícias de economia de falam sobre o dólar?
 
-sum = str.scan(/\[economia\].+dólar/).size
-  
-puts "#{sum} notícias falam sobre o dólar."
-puts " "
+sum = 0
+8.times do |i|
+  puts "#{tema[i]}"
+  if tema[i] == "[economia]"
+    puts "tema: #{tema[i]}"
+    md = titulo[i].scan(/dólar/)
+    if md[1] == dólar
+        sum += 1
+    end
+  end
+end
+
+puts "#{sum}  notícias falam sobre o dólar."
+
 # 4) Imprimir todos os horários das notícias que contém a palavra golfe.
-
-
-
 
 # 5) Substituir todos os temas de notícias pela sua versão em maiúsculas e
 # imprimir a string resultante. Ou seja: seu código deverá imprimir o seguinte:
@@ -135,12 +139,4 @@ puts " "
 # 16:13 - [ECONOMIA] Cotação do dólar sobe 5% em uma semana
 # 19:26 - [ESPORTE] Liga nacional de basquete tem recorde de público
 
-x=1
-tema.each do |i|
-
-  i.upcase
-  puts "#{horario[x]} - [#{i}] #{titulo[x]}"
-  x += 1
-end
-
-
+# Seu código aqui...
